@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dipes\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Users\\Dipes\\Downloads\\NoBrokerAPI-main\\NoBrokerAPI-main\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dipes\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\Dipes\\Downloads\\NoBrokerAPI-main\\NoBrokerAPI-main\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dipes\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Dipes\\Downloads\\NoBrokerAPI-main\\NoBrokerAPI-main\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\Dipes\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Users\\Dipes\\Downloads\\NoBrokerAPI-main\\NoBrokerAPI-main\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\Dipes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dipes\\source\\repos\\WebAPI\\WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\Dipes\\Downloads\\NoBrokerAPI-main\\NoBrokerAPI-main\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dipes\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,26 @@
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.2.8, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
             }
           },
           "imports": [
