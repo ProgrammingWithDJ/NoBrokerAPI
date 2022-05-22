@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.Data;
+using WebAPI.Data.Repo;
 using WebAPI.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -16,49 +17,42 @@ namespace WebAPI.Controllers
     public class CitesController : ControllerBase
     {
         private readonly DataContext dc;
-        public CitesController(DataContext dc)
+        private readonly ICityRepository repo;
+        public CitesController(ICityRepository repo)
         {
-            this.dc = dc;
+          
+            this.repo = repo;
         }   
         // GET: api/<CitesController>
         [HttpGet]
         public async Task<IActionResult> GetCities()    
         {
-            var cities = await dc.Cities.ToListAsync();
+            var cities = await repo.GetCitiesAsync();
             return Ok(cities);
         }
 
-        [HttpPost("add/{cityname}")]
-        public async Task<IActionResult> AddCity(string cityName)
-        {
-            City city = new City();
-            city.Name = cityName;
-
-            await dc.Cities.AddAsync(city);
-
-           await dc.SaveChangesAsync();
-
-            return Ok(city);
-        }
+        
 
         [HttpPost("Post")]
         public async Task<IActionResult> AddCityForm(City city)
         {
-            await dc.Cities.AddAsync(city);
+            repo.AddCity(city);
 
-            await dc.SaveChangesAsync();
+            await repo.SaveAsync();
 
-            return Ok(city);
+            return StatusCode(201);
         }
 
         [HttpDelete("delete/{Id}")]
         public async Task<IActionResult> DeleteCity(int id)
         {
-            var city = await dc.Cities.FindAsync(id);
+            //  var city = await dc.Cities.FindAsync(id);
+
+            repo.DeleteCity(id);
             
 
-              dc.Cities.Remove(city);
-             await dc.SaveChangesAsync();
+              
+             await repo.SaveAsync();
 
             return Ok(id);
 

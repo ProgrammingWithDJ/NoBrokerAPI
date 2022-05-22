@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.Data;
+using WebAPI.Data.Repo;
 
 namespace WebAPI
 {
@@ -29,6 +30,7 @@ namespace WebAPI
         {
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddControllers();
+            services.AddScoped<ICityRepository, CityRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
