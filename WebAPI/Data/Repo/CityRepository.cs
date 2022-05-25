@@ -10,7 +10,7 @@ namespace WebAPI.Data.Repo
 {
     public class CityRepository : ICityRepository
     {
-        private readonly DataContext dc;
+         private readonly DataContext dc;
         public CityRepository(DataContext dc)
         {
             this.dc = dc;
@@ -31,11 +31,5 @@ namespace WebAPI.Data.Repo
             return await dc.Cities.ToListAsync();
         }
 
-        public async Task<bool> SaveAsync()
-        {
-            return await dc.SaveChangesAsync() > 0;
-
-
-        }
     }
 }

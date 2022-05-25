@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.Data;
 using WebAPI.Data.Repo;
+using WebAPI.Dtos;
 using WebAPI.Interfaces;
 using WebAPI.Models;
 
@@ -18,28 +19,43 @@ namespace WebAPI.Controllers
     public class CitesController : ControllerBase
     {
         private readonly DataContext dc;
-        private readonly ICityRepository repo;
-        public CitesController(ICityRepository repo)
+        private readonly IUnitOfWork uow;
+        public CitesController(IUnitOfWork uow)
         {
           
-            this.repo = repo;
+            this.uow = uow;
         }   
         // GET: api/<CitesController>
         [HttpGet]
         public async Task<IActionResult> GetCities()    
         {
-            var cities = await repo.GetCitiesAsync();
-            return Ok(cities);
+            var cities = await uow.CityRepository.GetCitiesAsync();
+
+            var citiesDto = from c in cities
+                            select new CityDto()
+                            {
+                                Id = c.Id,
+                                Name = c.Name
+                            };
+
+            return Ok(citiesDto);
         }
 
         
 
         [HttpPost("Post")]
-        public async Task<IActionResult> AddCityForm(City city)
+        public async Task<IActionResult> AddCityForm(CityDto cityDto)
         {
-            repo.AddCity(city);
+            var city = new City
+            {
+                Name = cityDto.Name,
+                LastUpdatedBy = 1,
+                LastUpdatedOn = DateTime.Now
+            };
 
-            await repo.SaveAsync();
+            uow.CityRepository.AddCity(city);
+
+            await uow.SaveAsync();
 
             return StatusCode(201);
         }
@@ -49,11 +65,11 @@ namespace WebAPI.Controllers
         {
             //  var city = await dc.Cities.FindAsync(id);
 
-            repo.DeleteCity(id);
+            uow.CityRepository.DeleteCity(id);
             
 
               
-             await repo.SaveAsync();
+             await uow.SaveAsync();
 
             return Ok(id);
 
