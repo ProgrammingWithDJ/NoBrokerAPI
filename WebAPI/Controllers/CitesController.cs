@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -20,9 +21,10 @@ namespace WebAPI.Controllers
     {
         private readonly DataContext dc;
         private readonly IUnitOfWork uow;
-        public CitesController(IUnitOfWork uow)
+        private readonly IMapper mapper;
+        public CitesController(IUnitOfWork uow, IMapper mapper)
         {
-          
+            this.mapper = mapper;
             this.uow = uow;
         }   
         // GET: api/<CitesController>
@@ -31,12 +33,14 @@ namespace WebAPI.Controllers
         {
             var cities = await uow.CityRepository.GetCitiesAsync();
 
-            var citiesDto = from c in cities
-                            select new CityDto()
-                            {
-                                Id = c.Id,
-                                Name = c.Name
-                            };
+            var citiesDto = mapper.Map<IEnumerable<CityDto>>(cities);
+
+            //var citiesDto = from c in cities
+            //                select new CityDto()
+            //                {
+            //                    Id = c.Id,
+            //                    Name = c.Name
+            //                };
 
             return Ok(citiesDto);
         }
@@ -46,12 +50,16 @@ namespace WebAPI.Controllers
         [HttpPost("Post")]
         public async Task<IActionResult> AddCityForm(CityDto cityDto)
         {
-            var city = new City
-            {
-                Name = cityDto.Name,
-                LastUpdatedBy = 1,
-                LastUpdatedOn = DateTime.Now
-            };
+            var city = mapper.Map<City>(cityDto);
+            city.LastUpdatedBy = 1;
+            city.LastUpdatedOn = DateTime.Now;
+
+            //var city = new City
+            //{
+            //    Name = cityDto.Name,
+            //    LastUpdatedBy = 1,
+            //    LastUpdatedOn = DateTime.Now
+            //};
 
             uow.CityRepository.AddCity(city);
 
