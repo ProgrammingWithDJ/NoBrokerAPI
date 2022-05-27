@@ -60,7 +60,7 @@ namespace WebAPI.Controllers
             //    LastUpdatedBy = 1,
             //    LastUpdatedOn = DateTime.Now
             //};
-
+            
             uow.CityRepository.AddCity(city);
 
             await uow.SaveAsync();
@@ -68,7 +68,23 @@ namespace WebAPI.Controllers
             return StatusCode(201);
         }
 
-        [HttpDelete("delete/{Id}")]
+
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> UpdateCity(int Id,CityDto cityDto)
+        {
+            var cityFromDb = await uow.CityRepository.FindCity(Id);
+
+            cityFromDb.LastUpdatedBy = 1;
+            cityFromDb.LastUpdatedOn = DateTime.Now;
+
+            mapper.Map(cityDto,cityFromDb);
+
+            await uow.SaveAsync();
+
+            return StatusCode(200);
+
+        }
+            [HttpDelete("delete/{Id}")]
         public async Task<IActionResult> DeleteCity(int id)
         {
             //  var city = await dc.Cities.FindAsync(id);
