@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,11 +11,15 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using System.Web.Http.ExceptionHandling;
 using WebAPI.Data;
 using WebAPI.Data.Repo;
+using WebAPI.Extenstions;
 using WebAPI.Helpers;
 using WebAPI.Interfaces;
+using WebAPI.Middlewares;
 
 namespace WebAPI
 {
@@ -40,12 +45,10 @@ namespace WebAPI
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            //  app.ConfigureExceptionHandler(env);
 
+            app.UseMiddleware<ExceptionMiddleware>();
+           
             app.UseHttpsRedirection();
 
             app.UseRouting();

@@ -31,6 +31,9 @@ namespace WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCities()    
         {
+
+          
+
             var cities = await uow.CityRepository.GetCitiesAsync();
 
             var citiesDto = mapper.Map<IEnumerable<CityDto>>(cities);
@@ -72,7 +75,14 @@ namespace WebAPI.Controllers
         [HttpPut("update/{id}")]
         public async Task<IActionResult> UpdateCity(int Id,CityDto cityDto)
         {
+
+            if (Id != cityDto.Id)
+                return BadRequest("Update not alllowd");
+
             var cityFromDb = await uow.CityRepository.FindCity(Id);
+
+            if (cityFromDb == null)
+                return BadRequest("Update not allowed Ciy ID not found");
 
             cityFromDb.LastUpdatedBy = 1;
             cityFromDb.LastUpdatedOn = DateTime.Now;
