@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -29,10 +30,11 @@ namespace WebAPI.Controllers
         }   
         // GET: api/<CitesController>
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetCities()    
         {
 
-          
+            throw new UnauthorizedAccessException();
 
             var cities = await uow.CityRepository.GetCitiesAsync();
 

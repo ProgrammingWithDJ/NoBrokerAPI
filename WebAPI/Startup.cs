@@ -45,10 +45,11 @@ namespace WebAPI
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            //  app.ConfigureExceptionHandler(env);
+            app.ConfigureExceptionHandler(env);
 
-            app.UseMiddleware<ExceptionMiddleware>();
-           
+
+           // app.UseMiddleware<ExceptionMiddleware>();
+            app.UseHsts();
             app.UseHttpsRedirection();
 
             app.UseRouting();

@@ -8,12 +8,17 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http.ExceptionHandling;
+using WebAPI.Middlewares;
 
 namespace WebAPI.Extenstions
 {
     public static class ExceptionMiddlewareExtensions
     {
         public static void ConfigureExceptionHandler(this IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            app.UseMiddleware<ExceptionMiddleware>();
+        }
+        public static void ConfigureBuiltinExceptionHandler(this IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
