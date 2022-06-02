@@ -16,9 +16,8 @@ using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CitesController : ControllerBase
+  
+    public class CitesController : BaseController
     {
         private readonly DataContext dc;
         private readonly IUnitOfWork uow;
