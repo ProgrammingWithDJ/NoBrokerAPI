@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,12 @@ namespace WebAPI.Controllers
     public class AccountController : BaseController
     {
         private readonly IUnitOfWork uow;
+        private readonly IConfiguration configuration;
 
-        public AccountController(IUnitOfWork uow)
+        public AccountController(IUnitOfWork uow, IConfiguration configuration)
         {
             this.uow = uow;
+            this.configuration = configuration;
         }
 
 
@@ -38,7 +41,7 @@ namespace WebAPI.Controllers
             var response = new LoginResponseDto();
 
             response.UserName = user.UserName;
-            response.Token = "Sample Token";
+            response.Token = CreateJWT(user);
 
             
             return Ok(response);
@@ -47,8 +50,10 @@ namespace WebAPI.Controllers
 
         public string CreateJWT(User user)
         {
+            var secretKey = configuration.GetSection("AppSettings:key").Value;
+         
             var key = new SymmetricSecurityKey(Encoding.UTF8
-                .GetBytes("swafdaweadeawdawdadadada"));
+                .GetBytes(secretKey));
 
             var claims = new Claim[] {
 
@@ -64,7 +69,7 @@ namespace WebAPI.Controllers
             var tokenDescrptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddMinutes(1),
+                Expires = DateTime.UtcNow.AddMinutes(10),
                 SigningCredentials = siginingCredentials
 
             };

@@ -17,6 +17,7 @@ using WebAPI.Models;
 namespace WebAPI.Controllers
 {
   
+    [Authorize]
     public class CitesController : BaseController
     {
         private readonly DataContext dc;
@@ -29,11 +30,11 @@ namespace WebAPI.Controllers
         }   
         // GET: api/<CitesController>
         [HttpGet]
-        [AllowAnonymous]
+      //  [AllowAnonymous]
         public async Task<IActionResult> GetCities()    
         {
 
-            throw new UnauthorizedAccessException();
+            
 
             var cities = await uow.CityRepository.GetCitiesAsync();
 

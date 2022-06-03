@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MDXTorjVzT1YBulid2ScAIXwZtHec7xNWj04qY5peZDwYQPRtdz2EHatzZoWucrk41vCZcWNmj4IVBpwaLIg4A==",
+  "dgSpecHash": "2QcBmTnxQqVuM7OBUJNX6jr510ilGH5TkrxWDp8jUsdxPz8odQsowea6VbWOInywfK9ymlX0uNESZc9XceDlEQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dipes\\Documents\\NoBrokerAPI\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Dipes\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Dipes\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.8\\microsoft.aspnet.webapi.client.5.2.8.nupkg.sha512",
     "C:\\Users\\Dipes\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.8\\microsoft.aspnet.webapi.core.5.2.8.nupkg.sha512",
+    "C:\\Users\\Dipes\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.25\\microsoft.aspnetcore.authentication.jwtbearer.3.1.25.nupkg.sha512",
     "C:\\Users\\Dipes\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Dipes\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Dipes\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

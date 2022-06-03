@@ -158,3 +158,4 @@ C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.cspro
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
