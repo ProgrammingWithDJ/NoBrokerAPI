@@ -8,6 +8,7 @@ C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Release\netcoreapp3.1\PubTmp\Out
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Release\netcoreapp3.1\PubTmp\Out\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Release\netcoreapp3.1\PubTmp\Out\System.Net.Http.Formatting.dll
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Release\netcoreapp3.1\PubTmp\Out\System.Web.Http.dll
+C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Data.SqlClient.dll
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll

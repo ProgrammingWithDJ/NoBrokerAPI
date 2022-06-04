@@ -26,6 +26,7 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "Microsoft.AspNet.WebApi.Core": "5.2.8",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.25",
           "Microsoft.EntityFrameworkCore": "5.0.17",
           "Microsoft.EntityFrameworkCore.Design": "5.0.17",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
@@ -364,6 +365,20 @@
         },
         "compile": {
           "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.25": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.6.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "assemblyVersion": "3.1.25.0",
+            "fileVersion": "3.100.2522.21910"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
         }
       },
       "Microsoft.CSharp/4.7.0": {},
@@ -3436,6 +3451,13 @@
       "sha512": "sha512-AQ2Mmo2IEALj16Flk9L53Wl0WZ0QgeC5GPNe7G13e1E+GdbjIdewYeU7Y7EtGe921srIneGIsrlehMVFib4xiw==",
       "path": "microsoft.aspnet.webapi.core/5.2.8",
       "hashPath": "microsoft.aspnet.webapi.core.5.2.8.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.25": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yBycwuC2XcHBB8twbgIcP970UHY5D9KzlqBcr+7qK3RcH7ngqGo3g6LlCxlJkJyoKnaQUklO4kdDkzDVyPOZMw==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/3.1.25",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.3.1.25.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
