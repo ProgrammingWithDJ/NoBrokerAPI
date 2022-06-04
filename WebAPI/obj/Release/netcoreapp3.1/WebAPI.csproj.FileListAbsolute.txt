@@ -67,3 +67,4 @@ C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Release\netcoreapp3.1\WebAPI.csp
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Release\netcoreapp3.1\WebAPI.dll
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Release\netcoreapp3.1\WebAPI.pdb
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Release\netcoreapp3.1\WebAPI.genruntimeconfig.cache
+C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
