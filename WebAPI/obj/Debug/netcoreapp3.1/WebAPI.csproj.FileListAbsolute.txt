@@ -142,7 +142,6 @@ C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csprojAssemblyReference.cache
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfoInputs.cache
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfo.cs
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
@@ -155,3 +154,8 @@ C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.cspro
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.dll
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.pdb
 C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.genruntimeconfig.cache
+C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csprojAssemblyReference.cache
+C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Dipes\Documents\NoBrokerAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

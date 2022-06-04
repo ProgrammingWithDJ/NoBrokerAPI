@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,29 +16,36 @@ using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CitesController : ControllerBase
+  
+    [Authorize]
+    public class CitesController : BaseController
     {
         private readonly DataContext dc;
         private readonly IUnitOfWork uow;
-        public CitesController(IUnitOfWork uow)
+        private readonly IMapper mapper;
+        public CitesController(IUnitOfWork uow, IMapper mapper)
         {
-          
+            this.mapper = mapper;
             this.uow = uow;
         }   
         // GET: api/<CitesController>
         [HttpGet]
+      //  [AllowAnonymous]
         public async Task<IActionResult> GetCities()    
         {
+
+            
+
             var cities = await uow.CityRepository.GetCitiesAsync();
 
-            var citiesDto = from c in cities
-                            select new CityDto()
-                            {
-                                Id = c.Id,
-                                Name = c.Name
-                            };
+            var citiesDto = mapper.Map<IEnumerable<CityDto>>(cities);
+
+            //var citiesDto = from c in cities
+            //                select new CityDto()
+            //                {
+            //                    Id = c.Id,
+            //                    Name = c.Name
+            //                };
 
             return Ok(citiesDto);
         }
@@ -46,13 +55,17 @@ namespace WebAPI.Controllers
         [HttpPost("Post")]
         public async Task<IActionResult> AddCityForm(CityDto cityDto)
         {
-            var city = new City
-            {
-                Name = cityDto.Name,
-                LastUpdatedBy = 1,
-                LastUpdatedOn = DateTime.Now
-            };
+            var city = mapper.Map<City>(cityDto);
+            city.LastUpdatedBy = 1;
+            city.LastUpdatedOn = DateTime.Now;
 
+            //var city = new City
+            //{
+            //    Name = cityDto.Name,
+            //    LastUpdatedBy = 1,
+            //    LastUpdatedOn = DateTime.Now
+            //};
+            
             uow.CityRepository.AddCity(city);
 
             await uow.SaveAsync();
@@ -60,7 +73,30 @@ namespace WebAPI.Controllers
             return StatusCode(201);
         }
 
-        [HttpDelete("delete/{Id}")]
+
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> UpdateCity(int Id,CityDto cityDto)
+        {
+
+            if (Id != cityDto.Id)
+                return BadRequest("Update not alllowd");
+
+            var cityFromDb = await uow.CityRepository.FindCity(Id);
+
+            if (cityFromDb == null)
+                return BadRequest("Update not allowed Ciy ID not found");
+
+            cityFromDb.LastUpdatedBy = 1;
+            cityFromDb.LastUpdatedOn = DateTime.Now;
+
+            mapper.Map(cityDto,cityFromDb);
+
+            await uow.SaveAsync();
+
+            return StatusCode(200);
+
+        }
+            [HttpDelete("delete/{Id}")]
         public async Task<IActionResult> DeleteCity(int id)
         {
             //  var city = await dc.Cities.FindAsync(id);
