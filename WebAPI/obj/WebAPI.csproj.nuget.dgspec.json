@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dipes\\Documents\\NoBrokerAPI\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Users\\Dipes\\Source\\Repos\\dd\\NoBrokerAPI\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dipes\\Documents\\NoBrokerAPI\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\Dipes\\Source\\Repos\\dd\\NoBrokerAPI\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dipes\\Documents\\NoBrokerAPI\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Dipes\\Source\\Repos\\dd\\NoBrokerAPI\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\Dipes\\Documents\\NoBrokerAPI\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Users\\Dipes\\Source\\Repos\\dd\\NoBrokerAPI\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\Dipes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dipes\\Documents\\NoBrokerAPI\\WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\Dipes\\Source\\Repos\\dd\\NoBrokerAPI\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dipes\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,10 +82,29 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.32, 3.1.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -94,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
